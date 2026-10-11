@@ -78,3 +78,33 @@ body {
     outline: 2px solid var(--primary-color);
 }
 /* MEMBER 2: global styles, layout, colours, dark mode */
+/* typing cursor */
+.typing-effect::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* mobile menu */
+@media (max-width: 768px) {
+  #nav-menu { display: none; }
+  #nav-menu.open { display: block; }
+}
+
+/* active link */
+nav a.active {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* form feedback */
+.error-message {
+  color: #dc2626;
+  display: block;
+  min-height: 1.2em;
+}
+.success-message { color: #16a34a; }
+input.invalid,
+textarea.invalid { border-color: #dc2626; }
