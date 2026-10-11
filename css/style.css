@@ -1,75 +1,226 @@
-:root {
-    --primary-color: #2563eb;
-    --secondary-color: #1e40af;
-    --background-color: #ffffff;
-    --text-color: #1f2937;
-    --card-background: #f8fafc;
-    --border-color: #e5e7eb;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.dark-mode {
-    --background-color: #111827;
-    --text-color: #f9fafb;
-    --card-background: #1f2937;
-    --border-color: #374151;
+
+html {
+    scroll-behavior: smooth;
 }
+
 body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: #242536;
+    font-size: 14px;
+    line-height: 1.6;
 }
-.hero {
-    min-height: 80vh;
+
+main {
+    width: 100%;
+}
+
+h2 {
+    color: #51258c;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 28px;
+}
+
+p {
+    color: #777784;
+}
+
+#hero {
+    min-height: 330px;
+    padding: 65px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(
+        120deg,
+        #f1e9fc 0%,
+        #faf8ff 55%,
+        #ffffff 100%
+    );
+}
+
+#hero h1 {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 700;
+    color: #242536;
+    margin-bottom: 12px;
+}
+
+#hero h1 span {
+    color: #552692;
+}
+
+#hero p {
+    max-width: 460px;
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+#hero a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #51258c;
+    color: #ffffff;
+    padding: 11px 24px;
+    border-radius: 6px;
+    font-size: 13px;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+#hero a:hover {
+    background-color: #381565;
+    transform: translateY(-2px);
+}
+
+#about {
+    padding: 55px 20px;
+    text-align: center;
+}
+
+#about > p {
+    max-width: 650px;
+    margin: 0 auto 25px;
+}
+
+#about .about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.about-card {
+    background-color: #ffffff;
+    border: 1px solid #e9e6ef;
+    border-radius: 10px;
+    padding: 25px 18px;
+    box-shadow: 0 3px 12px rgba(40, 25, 60, 0.04);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(65, 35, 100, 0.1);
+}
+
+.about-card h3 {
+    color: #51258c;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.about-card p {
+    font-size: 13px;
+}
+
+#team {
+    background-color: #f3eefb;
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.team-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.team-card {
+    background-color: #ffffff;
+    border: 1px solid #e8e3ef;
+    border-radius: 10px;
+    padding: 25px 15px;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(65, 35, 100, 0.1);
+}
+
+.avatar {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background-color: #51258c;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    padding: 60px 20px;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto 30px;
-}
-.card {
-    background-color: var(--card-background);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 25px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
+    font-size: 16px;
     font-weight: bold;
 }
 
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background-color: var(--background-color);
-    color: var(--text-color);
+.team-card h3 {
+    color: #51258c;
+    font-size: 15px;
+    margin-bottom: 5px;
 }
 
-.form-group textarea {
-    min-height: 150px;
+.team-card p {
+    font-size: 12px;
+}
+
+#contact {
+    padding: 55px 20px 65px;
+    background-color: #ffffff;
+}
+
+#contact form {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+#contact form > div {
+    margin-bottom: 18px;
+}
+
+#contact label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 600;
+    font-size: 13px;
+    color: #303041;
+}
+
+#contact input,
+#contact textarea {
+    display: block;
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #dedbe5;
+    border-radius: 5px;
+    outline: none;
+    font-family: inherit;
+    font-size: 13px;
+    background-color: #ffffff;
+    transition: border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    border-color: #51258c;
+    box-shadow: 0 0 0 3px rgba(81, 37, 140, 0.1);
+}
+
+#contact textarea {
+    min-height: 120px;
     resize: vertical;
 }
 
@@ -78,3 +229,33 @@ body {
     outline: 2px solid var(--primary-color);
 }
 /* MEMBER 2: global styles, layout, colours, dark mode */
+/* typing cursor */
+.typing-effect::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* mobile menu */
+@media (max-width: 768px) {
+  #nav-menu { display: none; }
+  #nav-menu.open { display: block; }
+}
+
+/* active link */
+nav a.active {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* form feedback */
+.error-message {
+  color: #dc2626;
+  display: block;
+  min-height: 1.2em;
+}
+.success-message { color: #16a34a; }
+input.invalid,
+textarea.invalid { border-color: #dc2626; }
